@@ -1,0 +1,5 @@
+1. 域名解析功能没有加到脚本里——domains-all.txt 和 ipset-and-domains.txt 不是脚本生成的，重新跑一次就全丢了。
+2. 脚本还缺 4 个命令行参数：--output、--source、--asn-list、--workers，这些都得实现。
+3. ASN_LIST 支持外部 asn_list.json 加载也没做，换 ASN 源只能改源码。
+4. 同类供应商的 ASN 全发请求没有去重，浪费了大概一半的 API 请求；还缺并发控制，现在逐个串行 114 个 ASN 太慢了。
+检查修复一下。
